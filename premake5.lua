@@ -12,8 +12,8 @@ project "glfw"
             "Dist"
         }
 
-        targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-        objdir ("%{wks.location}/int/" .. outputdir .. "/%{prj.name}")
+        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+        objdir ("int/" .. outputdir .. "/%{prj.name}")
 
         files {
             "include/GLFW/glfw3.h",
