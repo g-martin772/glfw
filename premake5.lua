@@ -1,19 +1,10 @@
 project "glfw"
         kind "StaticLib"
         staticruntime "off"
-
         language "C"
 
-        architecture "x64"
-
-        configurations {
-            "Debug",
-            "Resease",
-            "Dist"
-        }
-
-        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-        objdir ("int/" .. outputdir .. "/%{prj.name}")
+        targetdir ("%{wks.location}/bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/%{prj.name}")
+        objdir ("%{wks.location}/obj/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/%{prj.name}")
 
         files {
             "include/GLFW/glfw3.h",
