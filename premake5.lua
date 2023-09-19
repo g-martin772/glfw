@@ -47,6 +47,43 @@ project "glfw"
                 "_GLFW_WIN32",
                 "_CRT_SECURE_NO_WARNINGS"
             }
+            
+        filter "system:linux"
+               defines {
+                     "_GLFW_X11",
+                     "_GLFW_HAS_XF86VM"
+                   }
+               
+                   files {
+                     "src/egl_context.h",
+                     "src/egl_context.c",
+                     "src/glx_context.h",
+                     "src/glx_context.c",
+                     "src/linux_joystick.h",
+                     "src/linux_joystick.c",
+                     "src/posix_time.h",
+                     "src/posix_time.c",
+                     "src/posix_module.c",
+                     "src/posix_poll.c",
+                     "src/posix_poll.h",
+                     "src/x11_init.c",
+                     "src/x11_platform.h",
+                     "src/x11_monitor.c",
+                     "src/x11_window.c",
+                     "src/xkb_unicode.h",
+                     "src/xkb_unicode.c",
+                     "src/posix_thread.h",
+                     "src/posix_thread.c",
+                     "src/osmesa_context.c",
+                     "src/osmesa_context.h",
+                     "src/platform.h",
+                     "src/internal.h"
+                   }
+               
+                   buildoptions
+                   {
+                     "-fPIC"
+                   }
     
         filter "configurations:Debug"
             runtime "Debug"
